@@ -1,7 +1,7 @@
 {% extends "layout_multi_sections.html" %}
 
 {% block page_title %}
-	Home Page
+	Community sport
 {% endblock %}
 
 
@@ -9,26 +9,21 @@
          <link href="{{ asset_path }}stylesheets/application.css" rel="stylesheet">
    {% endblock %}
 
- 
-
-{% block header %}
-{% endblock %}
-
  {% block main_nav %}
    {% include "includes/active/main_nav.html" %}    
- {% endblock %}
+ {% endblock %} 
 
-
-
+{% block header %}
+  {% include "includes/breadcrumb_sp.html" %}
+<h1>Community sport</h1>
+{% endblock %}
+ 
  {% block sectionOneTop %}
-  {% include "includes/carousel.html" %}  
 {% endblock %} 
 
-{% block sectionOneFull%}
-{% include "includes/active/promolist-home-sectionOne.html" %}  
+{% block sectionOneFullBottom %}
 {% endblock %}
 
-{% block sectionOneFullBottom %}{% endblock %}
 
 
  {% block breadcrumb %}
@@ -53,8 +48,7 @@
 {% block sectionTwoTop %}
 {% endblock %} 
 
-{% block sectionTwoFull%} 
-{% include "includes/active/promolist-home-sectionTwo.html" %}
+{% block sectionTwoFull%}
 {% endblock %}
 
 {% block sectionTwoContent %}
@@ -76,7 +70,7 @@
 {% block sectionThreeTop %}
 {% endblock %} 
 
-{% block sectionThreeFull%}
+{% block sectionThreeFull %}
   {% include "includes/active/more-than-a-gym.html" %}
 {% endblock %}
 
@@ -142,6 +136,4 @@
 {% block sectionFiveThirdCol3 %}
  {% endblock %}
 
-  {% block footer_nav %}
-   {% include "includes/footer_nav.html" %}
- {% endblock %}
+

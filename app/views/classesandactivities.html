@@ -1,34 +1,42 @@
 {% extends "layout_multi_sections.html" %}
 
 {% block page_title %}
-	Home Page
+	Classes & Activities
 {% endblock %}
 
 
   {% block css_register %}
-         <link href="{{ asset_path }}stylesheets/application.css" rel="stylesheet">
+           <link href="{{ asset_path }}stylesheets/application.css" rel="stylesheet">
    {% endblock %}
 
- 
-
-{% block header %}
-{% endblock %}
 
  {% block main_nav %}
    {% include "includes/active/main_nav.html" %}    
  {% endblock %}
 
-
-
+{% block header %}
+  {% include "includes/breadcrumb_sp.html" %}
+<h1>Classes & Activities</h1>
+{% endblock %}
+ 
  {% block sectionOneTop %}
-  {% include "includes/carousel.html" %}  
 {% endblock %} 
 
-{% block sectionOneFull%}
-{% include "includes/active/promolist-home-sectionOne.html" %}  
+{% block sectionOneFullBottom%}
+
+<p>Have a look through our swimming, classes and sports to find out what is available at your local leisure centres and in your local community in Leeds.​​</p>
+<div class="promoListWebpart" xmlns:ddwrt2="urn:frontpage:internal">
+  <div class="listWebpart">
+    <ul>
+      <li class="three blockLink turquoise"><a href="/Pages/Activity-Details.aspx?Category=Fitness+Class"><img src="http://active.leeds.gov.uk/PublishingImages/icon-fitnessclasses.png" alt=""><span class="info">Fitness Classes<span class="arrow"></span></span></a></li>
+      <li class="three blockLink blue"><a href="swimming.html"><img src="http://active.leeds.gov.uk/PublishingImages/icon-swimming.png" alt=""><span class="info">Swimming<span class="arrow"></span></span></a></li>
+      <li class="three blockLink purple"><a href="/classesandactivities/sports/Pages/default.aspx"><img src="http://active.leeds.gov.uk/PublishingImages/icon-courthire.png" alt=""><span class="info">Sports<span class="arrow"></span></span></a></li>
+    </ul>
+  </div>
+</div>
+<hr class="spacer-bottom">
 {% endblock %}
 
-{% block sectionOneFullBottom %}{% endblock %}
 
 
  {% block breadcrumb %}
@@ -53,7 +61,7 @@
 {% block sectionTwoTop %}
 {% endblock %} 
 
-{% block sectionTwoFull%} 
+{% block sectionTwoFull%}
 {% include "includes/active/promolist-home-sectionTwo.html" %}
 {% endblock %}
 
@@ -76,7 +84,7 @@
 {% block sectionThreeTop %}
 {% endblock %} 
 
-{% block sectionThreeFull%}
+{% block sectionThreeFull %}
   {% include "includes/active/more-than-a-gym.html" %}
 {% endblock %}
 
@@ -142,6 +150,4 @@
 {% block sectionFiveThirdCol3 %}
  {% endblock %}
 
-  {% block footer_nav %}
-   {% include "includes/footer_nav.html" %}
- {% endblock %}
+
