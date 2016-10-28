@@ -1,7 +1,7 @@
 {% extends "layout_multi_sections.html" %}
 
 {% block page_title %}
-	Home Page
+	Memberships
 {% endblock %}
 
 
@@ -9,26 +9,23 @@
          <link href="{{ asset_path }}stylesheets/application.css" rel="stylesheet">
    {% endblock %}
 
- 
-
-{% block header %}
-{% endblock %}
-
  {% block main_nav %}
    {% include "includes/active/main_nav.html" %}    
  {% endblock %}
+ 
 
-
-
+{% block header %}
+  {% include "includes/breadcrumb_sp.html" %}
+<h1>Memberships</h1>
+{% endblock %}
+ 
  {% block sectionOneTop %}
-  {% include "includes/carousel.html" %}  
 {% endblock %} 
 
-{% block sectionOneFull%}
-{% include "includes/active/promolist-home-sectionOne.html" %}  
+{% block sectionOneFullBottom %}
+{% include "includes/active/memberships-content.html" %}
 {% endblock %}
 
-{% block sectionOneFullBottom %}{% endblock %}
 
 
  {% block breadcrumb %}
@@ -53,8 +50,8 @@
 {% block sectionTwoTop %}
 {% endblock %} 
 
-{% block sectionTwoFull%} 
-{% include "includes/active/promolist-home-sectionTwo.html" %}
+{% block sectionTwoFull%}
+{% include "includes/active/memberships-promoList.html" %}
 {% endblock %}
 
 {% block sectionTwoContent %}
@@ -76,8 +73,8 @@
 {% block sectionThreeTop %}
 {% endblock %} 
 
-{% block sectionThreeFull%}
-  {% include "includes/active/more-than-a-gym.html" %}
+{% block sectionThreeFull %}
+{% include "includes/active/memberships-content3.html" %}
 {% endblock %}
 
 {% block sectionThreeContent %}
@@ -143,5 +140,5 @@
  {% endblock %}
 
   {% block footer_nav %}
-       {% include "includes/active/main_nav.html" %} 
+     {% include "includes/active/main_nav.html" %} 
  {% endblock %}

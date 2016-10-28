@@ -1,7 +1,7 @@
 {% extends "layout_multi_sections.html" %}
 
 {% block page_title %}
-	Home Page
+	Find a centre
 {% endblock %}
 
 
@@ -9,26 +9,28 @@
          <link href="{{ asset_path }}stylesheets/application.css" rel="stylesheet">
    {% endblock %}
 
- 
-
-{% block header %}
-{% endblock %}
-
  {% block main_nav %}
    {% include "includes/active/main_nav.html" %}    
- {% endblock %}
+ {% endblock %}  
 
-
-
+{% block header %}
+  {% include "includes/breadcrumb_sp.html" %}
+<h1>Find A Centre</h1>
+{% endblock %}
+ 
  {% block sectionOneTop %}
-  {% include "includes/carousel.html" %}  
 {% endblock %} 
 
-{% block sectionOneFull%}
-{% include "includes/active/promolist-home-sectionOne.html" %}  
+{% block sectionOneFullBottom %}
+  {% include "includes/active/findacentre-venues-results.html" %}
+
+<div class="infoBlock">
+<h3>Get fit, get healthy, get active in Leeds...</h3>
+<p>We're more than just a gym! With 16 leisure centres and a sailing and activity centre, there is a wide variety of activities available from fitness classes, swimming, kid's holiday activities and parties to outdoor activities such as kayaking, canoeing and BMXing, there really is something for everyone. You can find the Leeds Leisure Centre for you by using our easy search service.</p>
+</div>
+
 {% endblock %}
 
-{% block sectionOneFullBottom %}{% endblock %}
 
 
  {% block breadcrumb %}
@@ -53,8 +55,7 @@
 {% block sectionTwoTop %}
 {% endblock %} 
 
-{% block sectionTwoFull%} 
-{% include "includes/active/promolist-home-sectionTwo.html" %}
+{% block sectionTwoFull%}
 {% endblock %}
 
 {% block sectionTwoContent %}
@@ -76,7 +77,7 @@
 {% block sectionThreeTop %}
 {% endblock %} 
 
-{% block sectionThreeFull%}
+{% block sectionThreeFull %}
   {% include "includes/active/more-than-a-gym.html" %}
 {% endblock %}
 
@@ -142,6 +143,9 @@
 {% block sectionFiveThirdCol3 %}
  {% endblock %}
 
-  {% block footer_nav %}
-       {% include "includes/active/main_nav.html" %} 
+   {% block footer_nav %}
+        {% include "includes/active/main_nav.html" %}  
  {% endblock %}
+
+
+
