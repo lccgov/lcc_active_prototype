@@ -130,7 +130,6 @@ $eventsfilter-hightlight-color:#79298C;
 
 .masterhead{
 
-  
     .ms-srch-sb > input{
         background:#efefef;
         border-color:#efefef;
@@ -147,15 +146,10 @@ $eventsfilter-hightlight-color:#79298C;
 .sectionHeader{
    padding: 30px 0px;
    background: rgba(255, 255, 255, 0.9);
-
-
-
- 
-
-        
+      
  .logo{
         height:73px;
-        width:158;
+        width:158px;
         background:url(../img/logo.png) center top no-repeat;
 
         @media (max-width: 767px){
@@ -179,6 +173,7 @@ body #s4-bodyContainer {
     min-width: 0px !important;
 }
 
+//typography
 h1 {
     margin-top: 0px;
     margin-bottom: 40px;
@@ -275,9 +270,7 @@ a:visited {
 }
 
 
-/*******************
-SECTION SPACERS
-******************/
+//SECTION SPACERS
 
 hr.spacer-top, hr.spacer {
     margin-top: 80px;
@@ -347,13 +340,7 @@ hr.ms-rteElement-spacerMiddle {
     }
 }
 
-
-/* SECTION SPACERS END */
-
-
-/************************
-FORMS
-***********************/
+//FORMS
 
 .form-control,
 input#postcode,
@@ -374,7 +361,7 @@ input#postcode,
 }
 
 .btn-group {
-    -font-family: 'Oswald', sans-serif;
+    font-family: 'Oswald', sans-serif;
 }
 
 .btn-group .btn,
@@ -468,14 +455,7 @@ select.form-control {
     }
 }
 
-
-/* forms end */
-
-
-/*********************
-TABLES
-********************/
-
+//TABLES
 .table {
     border: none !important;
 }
@@ -590,16 +570,7 @@ TABLES
     border: none;
 }
 
-
-/*TABLES END*/
-
-
-/*TIMETABLES*/
-
-
-/*******************
-SECTIONS
-******************/
+//SECTIONS
 
 .sectionOne,
 .sectionThree,
@@ -631,7 +602,7 @@ SECTIONS
 }
 
 .sectionHeader {
-    padding: 30px 0px;
+    padding: 10px 0px;
     background: rgba(255, 255, 255, 0.9);
 }
 
@@ -685,9 +656,7 @@ SECTIONS
     }
 }
 
-
-/*overide bootstrap*/
-
+//overide bootstrap
 .col-lg-1,
 .col-lg-10,
 .col-lg-11,
@@ -739,48 +708,7 @@ SECTIONS
     min-height: 0px;
 }
 
-
-/*SECTION END*/
-
-
-/*NAV UTILITIES END*/
-
-
-/**********
-TOP NAV
-*********/
-
-/*#header-bottom {
-    position: relative;
-    background: #ECF0F1 url(../img/background.png) right top no-repeat;
-    padding: 20px 0 0;
-}
-
-.nav-top {
-    margin: 0;
-    background: #fff;
-    border: 0;
-}
-
-.navbar-brand {
-    float: left;
-    height: auto;
-    padding: 8px 0px;
-    font-size: 1.125rem;
-    line-height: 20px;
-}
-
-a.navbar-brand {
-    background: url(../img/lccLogo.svg) center center no-repeat;
-    display: inline-block;
-    height: 58px;
-    width: 120px;
-}
-
-.ie8 a.navbar-brand {
-    background: url(../img/lccLogo.png) center center no-repeat;
-}*/
-
+//nav buttons
 .nav-btns {
     margin-top: 15px;
 } 
@@ -790,177 +718,14 @@ a.navbar-brand {
     margin: 1.5%;
 }
 
-/*
-
-#nav-search {
-    padding: 20px 15px;
-    background: #ECF0F1;
-}
-
-#nav-search .btn {
-    border: none;
-}
-
-#nav-search .form-control {
-    border: none;
-}
-
-.mainLogo {
-    margin-left: auto;
-    margin-right: auto;
-    float: left;
-    width: 158px;
-    height: 73px;
-    background: url(../img/logo.svg) center center no-repeat;
-}
-
-.ie8 .mainLogo {
-    background: url(../img/logo.png) center center no-repeat;
-}
-
-#nav-search,
-section.utilitiesSection {
-    display: none;
-    width: 100%;
-}
-
-#navbar .container {
-    padding: 0;
-}
-
-#nav-search .container {
-    padding: 0;
-}
-
-ul.menu {
-    margin: 0 0 -10px;
-    padding: 0;
-}
-
-ul.menu li {
-    display: inline-block;
-    background: #ECF0F1;
-    margin: 0 0 0 -5px;
-    padding: 0;
-    border-left: 1px solid #fff;
-}
-
-ul.menu li a {
-    float: right;
-    font-size: 1.500rem;
-    padding: 9px 15px;
-    color: #006DA5;
-    text-decoration: none;
-}
-
-ul.menu li a:hover,
-ul.menu li a:focus {
-    background: #0D2B62;
-    color: #fff;
-    text-decoration: none;
-}
-
-ul.menu li a .glyphicon {
-    line-height: 40px;
-}
-
-ul.menu li a.active .glyphicon {
-    color: #fff;
-}
-
-ul.menu li a.main-menu {
-    display: none;
-}
-
-ul.menu li a.utilities:hover,
-ul.menu li a.utilities:focus {
-    background: #79288C;
-}
-
-ul.menu li a.utilities.active {
-    background: #79288C;
-}
-
-ul.menu li a.search.active {
-    background: #ECF0F1;
-}
-
-ul.menu li a.search:hover,
-ul.menu li a.search:focus {
-    background: #ECF0F1;
-}
-
-ul.menu li a.search:hover .glyphicon,
-ul.menu li a.search:focus .glyphicon {
-    color: #333;
-}
-
-ul.menu li a.search.active .glyphicon {
-    color: #333;
-}
-
-ul.menu li a.main-menu:hover,
-ul.menu li a.main-menu:focus {
-    background: #133E8D;
-}
-
-ul.menu li a.main-menu.active {
-    background: #133E8D;
-}
-
-a.utilities.active .utilities-open,
-a.search.active .search-open {
-    display: none;
-}
-
-a.utilities .utilities-close,
-a.search .search-close,
-a.main-menu .menu-close {
-    display: none;
-}
-
-a.utilities.active .utilities-close,
-a.search.active .search-close {
-    display: block;
-} */
-
 @media (max-width: 767px) {
- /*   #header-bottom {
-        background: #ECF0F1 url(../img/background-mobile.png) right top no-repeat;
-    }
-    ul.menu li a.main-menu {
-        display: block;
-    }
-    a.main-menu.active .menu-open {
-        display: none;
-    }
-    a.main-menu.active .menu-close {
-        display: block;
-    }
-    .mainLogo {
-        margin: 10px 0;
-        float: none;
-        display: inline-block;
-        width: 100%;
-    } */
-
     .nav-btns {
         margin-top: 0px;
         padding: 0;
     }
 }
 
-/*@media (max-width: 600px) {
-    ul.menu li a {
-        background: #fff;
-        padding: 9px;
-    }
-} */
-
-
-/***********
-MAIN MENU
-*********/
+//MAIN MENU
 
 .menu-horizontal {
     display: block !important;
@@ -1028,7 +793,7 @@ MAIN MENU
 }
 
 
-/*sharepoint styles overide*/
+//sharepoint styles overide
 
 .s4-tn li.static > .menu-item {
     border: none;
@@ -1047,9 +812,7 @@ MAIN MENU
 }
 
 
-/*******************
-FOOTER NAV
-*******************/
+//FOOTER NAV
 
 footer .s4-tn li.static > .menu-item {
     color: #fff;
@@ -1088,10 +851,7 @@ footer nav ul li a:visited {
 }
 
 
-/*********
-UTILITIES SECTION
-********/
-
+//UTILITIES SECTION
 section.utilitiesSection {
     display: none;
     padding: 10px 0;
@@ -1108,10 +868,7 @@ section.utilitiesSection ul li a:focus {
 }
 
 
-/***********
-BUTTONS
-***********/
-
+//BUTTONS
 .btn {
     border-radius: 0;
     font-family: 'Oswald', sans-serif;
@@ -1184,10 +941,7 @@ BUTTONS
 }
 
 
-/*******************
-BLOCK LINK
-******************/
-
+//BLOCK LINK
 .blockLink {
     text-align: center;
     padding: 10px;
