@@ -1,0 +1,276 @@
+{% extends "layout_multi_sections.html" %}
+
+{% block page_title %}
+Get  in touch
+{% endblock %}
+
+
+  {% block css_register %}
+         <link href="{{ asset_path }}/leedsgirlscan/stylesheets/application.css" rel="stylesheet">
+   {% endblock %}
+
+ {% block main_nav %}
+   {% include "includes/leedsgirlscan/main_nav.html" %}    
+ {% endblock %}
+ 
+ {% block sectionOneTop %}
+ <div class="heroBanner" style="background:url(/public/leedsgirlscan/images/running-4-768x480.jpg) no-repeat scroll top center;"><div class="overlay"> </div><div class="container-fluid">			    <h1>Get In touch</h1> <h2>Want to know more?</h2>						<p class="lead">If you want to know more about any of the events listed on the website or the This Girl Can Leeds campaign then please get in touch.</p></div>	 	</div>
+{% endblock %} 
+
+{% block sectionOneFullBottom %}
+
+{% endblock %}
+
+
+
+ {% block breadcrumb %}
+ {% endblock %}
+
+{% block sectionOneContent %}
+
+
+{% endblock %}
+
+{% block sectionOneRightHandColumn %}
+{% endblock %}
+
+{% block sectionOneThirdCol1 %}
+ {% endblock %}
+
+ {% block sectionOneThirdCol2 %}
+ {% endblock %}
+
+{% block sectionOneThirdCol3 %}
+ {% endblock %}
+
+
+{% block sectionTwoTop %}
+{% endblock %} 
+
+{% block sectionTwoFull%}
+
+<div class="content-block">
+<h2>Do you have an event?</h2>
+<p class="Lead">Simply fill in the contact box below and we will get in touch.</p>
+<a class="btn btn-outline" href="mailto:info@leedsgirlscan.co.uk">info@leedsgirlscan.co.uk</a>
+
+
+<h2>Your contact details</h2>
+<form>
+    <div class="form-group">
+        <fieldset>
+            <legend class="sr-only">Your contact details</legend>
+
+            <div class="form-group">
+    <label class="form-label" for="first-name-f1">What is your name?*</label>
+    <input class="form-control" id="first-name-f1" type="text" name="first-name-f1">
+</div>
+<div class="form-group">
+    <label class="form-label" for="last-name-f1">What's your email address?*</label>
+    <input class="form-control" id="last-name-f1" type="text" name="last-name-f1">
+</div>
+
+<div class="form-group">
+    <label class="form-label" for="last-name-f1">What's your phone number?</label>
+    <input class="form-control" id="last-name-f1" type="text" name="last-name-f1">
+</div>
+            
+        </fieldset>
+    </div>
+</form>
+
+<h2>Event details</h2>
+<form>
+    <div class="form-group">
+        <fieldset>
+            <legend class="sr-only">Event details</legend>
+
+
+<form>
+    <div class="form-group">
+        <fieldset>
+            <legend>
+                <span class="form-label-bold">When does your event start?</span>
+                <span class="form-hint">For example, 31 3 2017 </span>
+            </legend>
+            <div class="form-date">
+                <div class="form-group form-group-day">
+                <label class="form-label" for="dob-day">Day </label>
+                <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+                </div>
+                <div class="form-group form-group-month">
+                <label class="form-label" for="dob-month">Month </label>
+                <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                </div>
+                <div class="form-group form-group-year">
+                <label class="form-label" for="dob-year">Year </label>
+                <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016">
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</form>
+
+<form>
+    <div class="form-group">
+        <fieldset>
+            <legend>
+                <span class="form-label-bold">When does your event end?</span>
+                <span class="form-hint">For example, 31 3 2017 </span>
+            </legend>
+            <div class="form-date">
+                <div class="form-group form-group-day">
+                <label class="form-label" for="dob-day">Day </label>
+                <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+                </div>
+                <div class="form-group form-group-month">
+                <label class="form-label" for="dob-month">Month </label>
+                <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                </div>
+                <div class="form-group form-group-year">
+                <label class="form-label" for="dob-year">Year </label>
+                <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016">
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</form>
+<div class="form-group">
+    <label class="form-label" for="last-name-f1">Recurring Days?</label>
+      <span class="form-hint">e.g. Every Monday</span>
+    <input class="form-control" id="last-name-f1" type="text" name="last-name-f1">
+</div>
+<div class="form-group">
+    <label class="form-label" for="last-name-f1">Event start and finish time?*</label>
+      <span class="form-hint">e.g. 19:00 - 20:00</span>
+    <input class="form-control" id="last-name-f1" type="text" name="last-name-f1">
+</div>
+
+<div class="form-group">
+    <label class="form-label" for="last-name-f1">Do you have a website URL?</label>
+    <input class="form-control" id="last-name-f1" type="text" name="last-name-f1">
+</div>
+<div class="form-group"
+<label class="form-label" for="textarea">
+   Address of event?
+</label>
+<textarea class="form-control form-control-3-4" name="textarea" id="textarea" rows="5"></textarea>
+</div>
+<div class="form-group">
+<label class="form-label" for="textarea">
+  Do you have any further information
+</label>
+<textarea class="form-control form-control-3-4" name="textarea" id="textarea" rows="5"></textarea>
+</div>
+<div class="form-group">
+<label class="form-label" for="file-input">
+    Upload a image for you event
+</label>
+
+<input type="file" id="file-input"></div>
+
+  <div class="form-group">
+        <button type="submit"  class="btn btn-primary">
+       Send my event
+        </button>
+    </div>
+            
+        </fieldset>
+    </div>
+</form>
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block sectionTwoContent %}
+{% endblock %}
+
+{% block sectionTwoRightHandColumn %}
+{% endblock %}
+
+{% block sectionTwoThirdCol1 %}
+ {% endblock %}
+
+ {% block sectionTwoThirdCol2 %}
+ {% endblock %}
+
+{% block sectionTwoThirdCol3 %}
+ {% endblock %}
+
+
+{% block sectionThreeTop %}
+{% endblock %} 
+
+{% block sectionThreeFull %}
+{% endblock %}
+
+{% block sectionThreeContent %}
+{% endblock %}
+
+{% block sectionThreeRightHandColumn %}
+{% endblock %}
+
+{% block sectionThreeThirdCol1 %}
+ {% endblock %}
+
+ {% block sectionThreeThirdCol2 %}
+ {% endblock %}
+
+{% block sectionThreeThirdCol3 %}
+ {% endblock %}
+
+
+{% block sectionFourTop %}
+{% endblock %} 
+
+{% block sectionFourFull%}
+{% endblock %}
+
+{% block sectionFourContent %}
+{% endblock %}
+
+{% block sectionFourRightHandColumn %}
+{% endblock %}
+
+{% block sectionFourThirdCol1 %}
+ {% endblock %}
+
+ {% block sectionFourThirdCol2 %}
+ {% endblock %}
+
+{% block sectionFourThirdCol3 %}
+ {% endblock %}
+
+
+
+{% block sectionFiveTop %}
+{% endblock %} 
+
+{% block sectionFiveFull%}
+{% endblock %}
+
+{% block sectionFiveContent %}
+{% endblock %}
+
+{% block sectionFiveRightHandColumn %}
+{% endblock %}
+
+{% block sectionFiveThirdCol1 %}
+ {% endblock %}
+
+ {% block sectionFiveThirdCol2 %}
+
+ {% endblock %}
+
+{% block sectionFiveThirdCol3 %}
+ {% endblock %}
+ 
+  {% block footer_nav %}
+ {% endblock %}
+
+
