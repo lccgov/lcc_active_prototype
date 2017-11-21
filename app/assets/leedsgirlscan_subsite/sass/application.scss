@@ -233,36 +233,24 @@ body{
     display:none;
 }
 
-
-.masthead__video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    max-width: none;
-    background-size: cover;
-    transition: opacity,.5s,ease-in-out;
-    z-index:0;
-
+// full screen video for homepage
+video#bgvid { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(polina.jpg) no-repeat;
+    background-size: cover; 
 }
-
-.masthead__video,.masthead__video.is-loaded,.masthead__video.is-loaded+.masthead__content {
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-    opacity: 1
-}
-
-.masthead__video.is-disabled {
-    display: none
-}
-
-@media (min-width: 48em) {
-    .masthead__video {
-        display:block
-    }
-}
-
-
+//End full screen video for homepage
 
 .main-nav{ 
 
@@ -271,6 +259,7 @@ body{
     text-decoration: none;
     display:block;
     text-align: center;
+    background:$main-nav-background;
 }
    
    @media (min-width: 1200px) { 
@@ -297,10 +286,33 @@ body{
 
 footer.main .footerGlobal {
     background: #4d4d4d;
+
+ .container-fluid {
+     padding-top:50px;
+
+    nav ul{
+        text-align: center;
+
+        a{
+            text-decoration:none;
+            font-size:16px;
+            line-height:3em;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
 }
 
 
+}
 
+@media (max-width: 991px){
+
+footer.main .socialBookmarks ul li:first-of-type {
+   display:inline-block;
+}
+}
 
 //panel overides for full section images and events
 .panel.alt {
@@ -520,3 +532,66 @@ span{
 }
 
 // End styled tabs 
+
+
+.socialBookmarks .spotify:after {
+    content: "\f1bc";
+    font-family: FontAwesome;
+}
+
+
+footer.main .socialBookmarks .facebook:after, footer.main .socialBookmarks .twitter:after, footer.main .socialBookmarks .youtube:after, footer.main .socialBookmarks .email:after, footer.main .socialBookmarks .instagram:after, footer.main .socialBookmarks .flickr:after, footer.main .socialBookmarks .spotify:after {
+    font-family: FontAwesome;
+    font-size: 20px;
+    border-radius: 0;
+    width: 42px;
+    height: 42px;
+    display: block;
+    text-align: center;
+    padding-top: 5px;
+    border: 1px solid #999;
+    color: #fff;
+}
+
+.tagline{
+    text-align:center;
+    color:#fff;
+    position:absolute;
+    top:60vh;
+    width:100%;
+    text-transform:uppercase;
+
+    p{
+        margin-bottom:0px;
+    }
+
+    span {
+
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    vertical-align: baseline;
+    zoom: 1;
+    position: relative;
+    padding: 0 10px;
+
+    
+    &:before, &:after {
+    content: '';
+    display: block;
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    border-top: 2px solid #fff;
+}
+
+    &:before{
+    left:-100px;
+    }
+
+    
+    &:after{
+    left:58px;
+    }
+}
+}

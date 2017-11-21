@@ -14,7 +14,7 @@ Get  in touch
  {% endblock %}
  
  {% block sectionOneTop %}
- <div class="heroBanner" style="background:url(/public/leedsgirlscan/images/running-4-768x480.jpg) no-repeat scroll top center;"><div class="overlay"> </div><div class="container-fluid">			    <h1>Get In touch</h1> <h2>Want to know more?</h2>						<p class="lead">If you want to know more about any of the events listed on the website or the This Girl Can Leeds campaign then please get in touch.</p></div>	 	</div>
+ <div class="heroBanner" style="background:url(/public/leedsgirlscan/images/running-4-768x480.jpg) no-repeat scroll top center;"><div class="overlay"> </div><div class="container-fluid">	<div class="content-block">		    <h1>Get In touch</h1> <h2>Want to know more?</h2>						<p class="lead">If you want to know more about any of the events listed on the website or the This Girl Can Leeds campaign then please get in touch.</p></div>	 	</div></div>
 {% endblock %} 
 
 {% block sectionOneFullBottom %}
@@ -270,7 +270,6 @@ Get  in touch
 {% block sectionFiveThirdCol3 %}
  {% endblock %}
  
-  {% block footer_nav %}
- {% endblock %}
-
-
+  {% block reuserblecontent_footer %}
+   {% include "includes/leedsgirlscan/footer.html" %}   
+   {% endblock %}

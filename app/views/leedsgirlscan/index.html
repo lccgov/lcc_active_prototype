@@ -17,15 +17,53 @@
 {% endblock %}
 
  {% block main_nav %}
-   {% include "includes/leedsgirlscan/main_nav.html" %}   
+  {% include "includes/leedsgirlscan/main_nav.html" %}    
     {% endblock %}
 
 
 
  {% block sectionOneTop %}
+<span id="top"class="sr-only"></span>
+  <style>
+  .sectionHeader{
+    height:100vh;
+    background:transparent;
+  }
+
+  
+    .logo{
+    width: 500px;
+    height: 175px;
+    position:absolute;
+    top: 40vh !important;
+    left: 50% !important;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    }
+  </style>
 {% endblock %} 
 
 {% block sectionOneFull%}
+<div class="content-block text-center">
+<h2 class="heading-xlarge">This Girl Can</h2>
+<p class="lead">Leeds</p>
+</div>
+
+
+
+<div class="panel alt img">
+ <div class="img-container col-md-4" style="background-image: url('/public/leedsgirlscan/images/19047685_10154592838395108_131101072_n.jpg');">
+</div>
+<div class="col-md-8 col-md-offset-4 content">
+<h2>This Girl Can</h2>
+<h3>Roll</h3>
+<a href="" class="btn btn-outline">FIND OUT MORE</a>
+</div>
+<div class="clearfix"></div>
+</div>
+
 
 {% endblock %}
 
@@ -36,8 +74,7 @@
  {% endblock %}
 
 {% block sectionOneContent %}
-<h2>What are we about?</h2>
-<p>This Girl Can Leeds is part of the national This Girl Can campaign developed by Sport England together with a range of partners to encourage women to take part in sport.</p>
+
 {% endblock %}
 
 {% block sectionOneRightHandColumn %}
@@ -143,5 +180,6 @@
 {% block sectionFiveThirdCol3 %}
  {% endblock %}
 
-  {% block footer_nav %}
+  {% block reuserblecontent_footer %}
+   {% include "includes/leedsgirlscan/footer.html" %}   
    {% endblock %}
