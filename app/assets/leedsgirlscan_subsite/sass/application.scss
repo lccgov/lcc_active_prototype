@@ -130,6 +130,9 @@ $promo-highlight-background-color:#911F89;
 $promo-highlight-color:#fff;
 //$promo-arrow:"\f054" !default;
 
+//eventwebparts
+$eventsfilter-hightlight-color:#911F89;
+
 @import 'base';
 
 @import '2010-typography-overrides';
@@ -480,6 +483,10 @@ footer.main .socialBookmarks .facebook:after, footer.main .socialBookmarks .twit
     position: relative;
     padding: 0 10px;
 
+    .tagline__arrow{
+        color:#c344ba
+    }
+
     
     &:before, &:after {
     content: '';
@@ -504,4 +511,14 @@ footer.main .socialBookmarks .facebook:after, footer.main .socialBookmarks .twit
 .panel.panel-border {
     background: white;
     border: 1px solid #e0e0e0;
+}
+
+.eventsFilterType input.form-control, .eventsFilterType select, .venuesFilterType input.form-control, .venuesFilterType select {
+    width:100% !important;
+    border: 1px solid #e0e0e0;
+}
+
+
+.ms-core-listMenu-horizontalBox > .ms-core-listMenu-root > .ms-listMenu-editLink a {
+   position:absolute;
 }
