@@ -14,14 +14,15 @@ $menu-link-color:#006DA5;
 //base.scss
 
 $base-background-color:#fff;
-$base-font-size:16px ;
+$base-font-size:19px ;
 $base-font-color:#333 ;
 //$base-link-color:#133E8D ;
 //$base-container-width:1500px ;
 $btn-background-color:#e7cc26;
 $font-primary: 'Oswald', Helvetica, Arial;
-$font-secondary:'Quattrocento', Helvetica, Arial; // secondary font
+$font-secondary:'Open Sans', sans-serif; // secondary font
 
+$input-border-color:#E4E8EC;
 
 // global used on all partials to get a uniform spacing between elements
 //$base-margin-bottom:1.875em ;
@@ -86,34 +87,46 @@ $promo-group-link-color:#333 !default;
 // Events webparts
 $eventsfilter-hightlight-color:#79298C;
 
+@import 'base';
 
-@import 'mixins';
-@import 'variables';
-@import 'brandColors';
-
-// available sass files please un-comment out as required
-
-//@import 'mainMenuSubsites';
-@import 'breadcrumb';
-//@import 'sectionSubsite';
-//@import 'promo';
-@import 'carousel';
-//@import 'socialMedia';
-@import 'sideNavigation';
-//@import 'blockLinks';
+@import '2010-typography-overrides';
 @import 'accordion';
-@import 'promoGroup';
-@import 'alerts';
-//@import 'promoListwebpart';
-@import 'eventsWebparts';
-@import 'sharepointOverides';
-@import 'iconLinks';
-//@import 'heroBanner';
+//@import 'a-to-z';
+//@import 'block-links';
+@import 'block-quote';
+@import 'brand-colors';
+@import 'carousel';
+//@import 'content-assets'; //subsite only
+@import 'content-link'; //subsite only
+//@import 'description-list';
+//@import 'doc-list'; //needs aligning with lcc_doc-list and a.doc within typography - DH
+@import 'events-search-results';
+@import 'events-webparts';
+//@import 'group-promo';
+//@import 'hero-banner';
+//@import 'hero-banner-overlay'; //needs aligning with hero-bnner - RM
+@import 'icon-links';
+//@import 'lcc-base-styles'; //needs finalising - DH & RM
+//@import 'lcc-doc-list'; //see above - DH
+//@import 'lcc-footer'; //needs aligning with footer - is it leeds.gov specific? - DH
+//@import 'lcc-header'; //needs aligning with header - is it leeds.gov specific? - DH
+//@import 'lcc-hero'; //needs aligning with hero - is it leeds.gov specific? - DH
+//@import 'lcc-news'; //needs aligning with footer - is it leeds.gov specific? - DH
+//@import 'lcc-search'; //needs aligning with global search - is it leeds.gov specific? - DH
+//@import 'mega-promo';
 //@import 'news';
-//@import 'polaroids';
-//@import 'groupPromo';
-//@import 'blocklinks';
-@import 'contentLink';
+//@import 'open-data'; //is it leeds.gov.uk specific? - does it need re-naming- DH
+//@import 'journey-page';
+//@import 'phase-banner'; //work needed to have in page beta banner
+//@import 'polaroids'; //subsite only
+//@import 'promo';
+//@import 'promo-list-webpart'; //subsite only
+//@import 'section-subsite'; //subsite only
+@import 'sharepoint-overrides'; 
+@import 'side-nav'; //needs aligning with side-navigation - DH & RM
+//@import 'survey-webpart'; //is it leeds.gov specific? Relys on where-i-live which should be in the fet but renamed to search-panel - DH
+@import 'url-helper';
+@import 'webchat';
 
 //colors
 $blue:#0082C8;
@@ -180,13 +193,10 @@ input {
 }
 
 h1 {
-    margin-top: 0px;
-    margin-bottom: 40px;
     font-size: 3.125rem;
     text-transform: uppercase;
 
     @media (max-width: 600px) {
-        margin-bottom: 30px;
         font-size: 2.500rem;
     }
 }
@@ -204,7 +214,6 @@ footer ol {
 }
 
 a.btn,
-.breadcrumb a,
 .nav-tabs>li>a,
 .nav>li>a,
 .blockLink a {
@@ -233,13 +242,11 @@ a{
     }
     &:hover,
     &:focus {
-        color: #0087CC;
-        text-decoration: none;
+        color:lighten(#0087CC,5%);
     }
 
     &:visited {
-        color: inherit;
-        text-decoration: none;
+        color:darken(#0087CC,5%);
     }
 }
 
@@ -380,14 +387,14 @@ select.desktopDropDown::-ms-expand {
 }
 
 select.form-control {
-    background-image: url("../images/select-arrow.png");
-    background-color: #ffffff;
-    background-repeat: no-repeat;
-    background-position: right;
-    padding-right: 60px;
-    height: 50px;
-    border-radius: 0;
-    border-color: #E4E8EC;
+    background-image: url("../images/select-arrow.png") !important;
+    background-color: #ffffff !important;;
+    background-repeat: no-repeat !important;;
+    background-position: right !important;;
+    padding-right: 60px !important;;
+    height: 50px !important;;
+    border-radius: 0 !important;;
+    border-color: #E4E8EC !important;;
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
@@ -545,9 +552,9 @@ select.form-control {
     background: #ffffff;
 }
 
-.sectionSix {
+.sectionFive {
     position: relative;
-    background: #ECF0F1 url(../images/background.png) left bottom no-repeat;
+    background: #ffffff url(../images/background-footer.png) center bottom no-repeat;
     padding: 0 0 20px;
 }
 
@@ -665,19 +672,23 @@ select.form-control {
 //nav buttons
 .nav-btns {
     margin-top: 15px;
-} 
-
-.nav-btn {
-    width: 47%;
-    margin: 1.5%;
-}
-
-@media (max-width: 767px) {
-    .nav-btns {
+    @media (max-width: 767px) {
         margin-top: 0px;
         padding: 0;
     }
-}
+    .nav-btn {
+        width: 47%;
+        margin: 1.5%;
+        text-align:center;
+        padding: 20px 25px;
+        @media (max-width: 767px) {
+            padding: 10px 15px;
+        }
+        &:before{
+            display:none;
+        }
+    }
+} 
 
 //MAIN MENU
 
@@ -1728,22 +1739,42 @@ CENTRE DETAILS
     filter: grayscale(100%);
 }
 
-.contactDetails .panel {
-    border: 1px solid #E4E8EC;
-    border-bottom: 3px solid #E4E8EC;
-    border-radius: 0px;
-    -webkit-box-shadow: none;
-    box-shadow: none;
+.contactDetails {
+        border: 1px solid #E4E8EC;
+        border-bottom: 3px solid #E4E8EC;
+        border-radius: 0px;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        background:white;
+
+        h2{
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            border: 0;
+        }
+
+        .panel-body{
+            h3{
+                display:none;
+            }
+
+            #mapDiv{
+                margin-bottom:30px;
+            }
+        }
 }
 
 .contactDetails .panel-body {
     padding: 20px;
 }
 
-.contactDetails #googleMap {
+.contactDetails #google-map {
     margin-bottom: 20px;
-    min-height: 258px;
-    height:258px;
 }
 
 .contactDetails p {
@@ -1751,7 +1782,11 @@ CENTRE DETAILS
     padding-left: 30px;
     -ms-word-wrap: break-word;
     word-wrap: break-word;
-    margin: 0 0 5px;
+    margin: 0 0 10px;
+
+    &:first-of-type{
+        margin-top:15px;
+    }
 }
 
 .contactDetails p .glyphicon {
@@ -1759,6 +1794,68 @@ CENTRE DETAILS
     left: 0;
     top: 7px;
     color: #79298C;
+}
+
+//map and address fixes
+.col-md-4{
+    .panel{
+        border: 1px solid #E4E8EC;
+        border-bottom: 3px solid #E4E8EC;
+        border-radius: 0px;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        background:white;
+        margin-top:0;
+
+        .listWebpart{
+            h2{
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                margin: -1px;
+                overflow: hidden;
+                clip: rect(0,0,0,0);
+                border: 0;
+            }
+
+            .panel-body{
+                padding: 0;
+
+                #google-map {
+                    margin-bottom: 20px;
+                }
+
+                h3{
+                    display:none;
+                }
+
+                p{
+                    position: relative;
+                    padding-left: 30px;
+                    -ms-word-wrap: break-word;
+                    word-wrap: break-word;
+                    margin: 0 0 10px;
+
+                    &:first-of-type{
+                        margin-top:15px;
+                    }
+                    .glyphicon,
+                    .fa{
+                        margin-right:5px;
+                        color:#79288c;
+                        position: absolute;
+                        left: 0;
+                        top: 5px;
+                    }
+
+                    [rel=doc].link:after, [rel=external].link:after, [rel=pdf].link:after, a[rel=doc]:after, a[rel=external]:after, a[rel=pdf]:after {
+                        right: -28px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .infoBlock .glyphicon {
@@ -1819,6 +1916,10 @@ CENTRE DETAILS
 /*****************************
 LEISURE CENTER NAV
 ******************************/
+
+.pageNav{
+    padding:0;
+}
 
 .pageNav .nav-tabs {
     border: none;
@@ -2022,11 +2123,11 @@ a.showClassFilters {
 
 /* Required to handle tab show and hide as SharePoint adding an additional div between tab content and tab panel*/
 
-div.tab-content div.tab-pane {
+div.tab-pane {
     display: none
 }
 
-div.tab-content div.tab-pane.active {
+div.tab-pane.active {
     display: block
 }
 
@@ -2423,78 +2524,6 @@ RANDOM STYLE
 
 /*RANDOM STYLE END*/
 
-
-/**********************
-BACK TO THE TOP
-********************/
-
-.cd-top {
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    position: fixed;
-    bottom: 40px;
-    right: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    /* image replacement properties */
-    overflow: hidden;
-    text-indent: 100%;
-    white-space: nowrap;
-    background: rgba(51, 122, 183, 0.8) url(../images/cd-top-arrow.svg) no-repeat center 50%;
-    visibility: hidden;
-    opacity: 0;
-    -webkit-transition: opacity .3s 0s, visibility 0s .3s;
-    -moz-transition: opacity .3s 0s, visibility 0s .3s;
-    -o-transition: opacity .3s 0s, visibility 0s .3s;
-    transition: opacity .3s 0s, visibility 0s .3s;
-    z-index: 999;
-}
-
-.cd-top.cd-is-visible,
-.cd-top.cd-fade-out,
-.no-touch .cd-top:hover {
-    -webkit-transition: opacity .3s 0s, visibility 0s 0s;
-    -moz-transition: opacity .3s 0s, visibility 0s 0s;
-    -o-transition: opacity .3s 0s, visibility 0s 0s;
-    transition: opacity .3s 0s, visibility 0s 0s;
-}
-
-.cd-top.cd-is-visible {
-    /* the button becomes visible */
-    visibility: visible;
-    opacity: 1;
-}
-
-.cd-top.cd-fade-out {
-    /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
-    opacity: .5;
-}
-
-.no-touch .cd-top:hover {
-    background-color: rgba(51, 122, 183, 1.0);
-    opacity: 1;
-}
-
-@media only screen and (min-width: 767px) {
-    .cd-top {
-        right: 20px;
-        bottom: 20px;
-    }
-}
-
-@media only screen and (min-width: 1024px) {
-    .cd-top {
-        height: 60px;
-        width: 60px;
-        right: 30px;
-        bottom: 30px;
-    }
-}
-
-
-/*BACK TO TOP END*/
-
-
 /*****************
 CAROUSEL BOOTSTRAP
 *******************/
@@ -2731,19 +2760,23 @@ input {
 
 //poular activities webpart
 
-.popularActivities .listWebpart h2 {
-    text-align: center;
+.popularActivities .listWebpart{
 
-    &:after {
-        content: "Select an activity to check availability and book online.";
-        display: block;
-        margin: 20px 0 0;
-        font-size: 1rem;
-        font-family: 'Open Sans', sans-serif;
-        text-transform: none;
+    h2 {
+        text-align: center;
+
+        &:after {
+            content: "Select an activity to check availability and book online.";
+            display: block;
+            margin: 20px 0 0;
+            font-size: 1rem;
+            font-family: 'Open Sans', sans-serif;
+            text-transform: none;
+        }
     }
 
-    .listWebpart ul {
+
+    ul {
         list-style: none;
         text-align: center;
 
@@ -2782,6 +2815,7 @@ input {
         }
     }
 }
+
 
 
 
@@ -2910,11 +2944,27 @@ input {
 @media only screen and (max-width: 991px){
 .mapToggle a.btn {
     width: 49.9%;
+    float:left;
+    text-align:center;
+    margin-bottom:0;
 }
 }
 
 #filterhide a.btn {
   color:#fff;
+  text-align:center;
+  -webkit-box-shadow: 0 3px 0 darken($base-link-color,10%);
+    -moz-box-shadow: 0 3px 0 darken($base-link-color,10%);
+    box-shadow: 0 3px 0 darken($base-link-color,10%);
+    font-size: 20.9px;
+}
+
+.eventsSearchSort{
+    .pull-right{
+        @media (max-width: 991px) {
+            width:100%;
+        }
+    }
 }
 
 .eventsFilterHeader h2, .venuesFilterHeader h2 {
@@ -2988,175 +3038,6 @@ td .ui-state-default {
     width: 1.8em;
     height: 1.8em;
 }
-
-
-/*ALERT VENUE*/
-
-.alert-wrapper {
-    width: 100%;
-}
-
-.alert-wrapper .alert {
-    width: 100%;
-    border-radius: 0;
-    margin: 0;
-    color: #fff;
-    border: 0;
-    line-height: 1.4em;
-    padding: 30px;
-}
-
-section .alert-wrapper .alert:last-child {
-    margin-bottom: 30px;
-}
-
-.alert-wrapper .alert .container {
-    position: relative;
-    padding: 0;
-}
-
-section .alert .container {
-    width: 100%;
-}
-
-.alert-dismissable .close,
-.alert-dismissible .close {
-    right: -15px;
-    top: 0px;
-}
-
-section .alert-dismissable .close,
-section .alert-dismissible .close {
-    right: -11px;
-    top: 0px;
-}
-
-.alert-wrapper .alert .container:before {
-    content: '\f0a1';
-    font-family: FontAwesome;
-    font-weight: normal;
-    font-style: normal;
-    text-decoration: none !important;
-    border: none;
-    position: absolute;
-    left: 0px;
-    top: 30px;
-    font-size: 70px;
-    color: #fff;
-}
-
-.alert-wrapper .alert .container .alertInner {
-    padding-left: 100px;
-}
-
-.alert-wrapper .alert h2 {
-    margin: 0 0 10px;
-}
-
-.alert-wrapper .alert p {
-    margin: 0;
-}
-
-.alert-wrapper .alert a {
-    color: #fff;
-    text-decoration: none;
-    display: inline-block;
-    border: 1px solid #fff;
-    padding: 10px 60px 10px 10px;
-    margin-top: 15px;
-}
-
-.alert-wrapper .alert.yellow a,
-.alert-wrapper .alert.orange a {
-    color: #333;
-}
-
-.alert-wrapper .alert.yellow a:hover,
-.alert-wrapper .alert.yellow a:focus {
-    color: #333;
-    background-color: #FFD871;
-}
-
-.alert-wrapper .alert.orange a:hover,
-.alert-wrapper .alert.orange a:focus {
-    color: #333;
-    background-color: #F8B76D;
-}
-
-.purple.alert {
-    background: #79298C;
-}
-
-.alert-wrapper .alert.purple a:hover,
-.alert-wrapper .alert.purple a:focus {
-    background-color: #501B5A;
-}
-
-.bluish.alert {
-    background: #00938B;
-}
-
-.alert-wrapper .alert.bluish a:hover,
-.alert-wrapper .alert.bluish a:focus {
-    background-color: #005E59;
-}
-
-.yellow.alert {
-    background: #FFC11E;
-    color: #333333 !important;
-}
-
-.orange.alert {
-    background: #F5911F;
-    color: #333333 !important;
-}
-
-.alert-wrapper .yellow.alert .close,
-.alert-wrapper .orange.alert .close {
-    color: #333333 !important;
-}
-
-.alert-wrapper .alert .close {
-    font-size: 1.875rem;
-    color: #fff !important;
-    -webkit-text-shadow: none;
-    -moz-text-shadow: none;
-    -o-text-shadow: none;
-    text-shadow: none;
-    filter: alpha(opacity=80);
-    opacity: .8;
-}
-
-.alert-wrapper .close:hover,
-.alert-wrapper .close:focus {
-    -webkit-text-shadow: 0;
-    -moz-text-shadow: 0;
-    -o-text-shadow: 0;
-    text-shadow: 0;
-    filter: alpha(opacity=100);
-    opacity: 1;
-}
-
-@media only screen and (max-width: 767px) {
-    .alert-wrapper .alert:last-child {
-        margin-bottom: 30px;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .alert-wrapper .alert {
-        padding: 20px;
-    }
-    .alert-wrapper .alert .container:before {
-        left: 0px;
-        top: 10px;
-        font-size: 30px;
-    }
-    .alert-wrapper .alert .container .alertInner {
-        padding-left: 40px;
-    }
-}
-
 
 /****************
 NEW TIMETABLE
@@ -3680,7 +3561,8 @@ article h3,
 article h4,
 h2.article,
 h3.article,
-h4.article {
+h4.article,
+.sectionOne .col-md-8 h2 {
     color: #79288C;
 }
 
@@ -4499,34 +4381,24 @@ CONTENT - ACCORDION
 
 /*LOADING*/
 
-.timetableloading {
+.loading {
     text-align: center;
 }
 
-.timetableloading h1 {
+.loading h1 {
     display: none;
 }
 
-.timetableloading #loading {
-    width: 100% !important;
-    height: 200px !important;
-    background: url(../images/loading.GIF) no-repeat center center !important;
-    display: block !important;
+#loading{
+    font-size:19px;
 }
 
-.timetableloading #loading img {
-    display: none;
-}
-
-.timetableloading #loading:before {
-    content: "Hold tight! We're just loading something.";
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1rem;
-}
-
-.sectionTwo .timetableloading #loading,
-.sectionFour .timetableloading #loading {
-    background: url(http://active.leeds.gov.uk/PublishingImages/loading-grey.gif) no-repeat center center !important;
+.sectionTwo #loading .loadingImage,
+.sectionFour #loading .loadingImage {
+    width: 100%;
+    height: 84px;
+    background: url(../images/loading-grey.gif) no-repeat center center;
+    display: block;
 }
 
 
@@ -4883,3 +4755,222 @@ ul.content li.resultsItemWrapper {
 .eventsFilterSortContainer .distance:before {
     display:none;
 }
+
+.blockLink a{
+    background-color:white !important;
+    background-position:top 40px center !important;
+}
+
+.blockLink.promo a{
+    background-size: cover !important;
+    background-position:top left !important;
+}
+
+@media (max-width: 767px){
+
+    .main-nav .container-fluid ul li ul {
+        display:none;
+    }
+
+}
+
+
+
+.eventsFilterType .panel-group .panel{
+    padding:0;
+    margin:0;
+}
+
+.eventsFilter .btn-group .btn, .eventsFilter .btn.btn-primary, .eventsFilter .input-group-btn .btn, #filterCloseButton .btn {
+    color: #fff;
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 991px){
+    .eventsFilter.active, .venuesFilter.active {
+        height: auto;
+    }
+}
+
+#filterCloseButton .btn, #filterCloseButton .btn:visited {
+    background: #006DA5 !important;
+    border-bottom: 5px solid #00486F;
+}
+
+ul.menu li .main-menu.link, ul.menu li a.main-menu,.ms-srch-sb>.ms-srch-sb-searchLink {
+    text-decoration:none;
+}
+
+ul.menu li .main-menu.link, ul.menu li a.main-menu {
+    color:white !important;
+}
+
+@media only screen and (max-width: 700px){
+.nav-tabs>li .link, .nav-tabs>li a {
+    padding: 10px !important;
+}
+}
+
+/*additional style for find a centre details*/
+
+.resultsItem p{
+                margin-bottom:10px;
+                padding-left: 26px;
+                position: relative;
+                font-size: 15px;
+}
+
+.resultsItem p .glyphicon{
+                position:absolute;
+                top: 4px;
+                left:0;
+ color:#79298C;
+}
+
+.resultsItem p a{
+                color:#006DA5 !important;
+}
+
+.session h3{
+    font-family:$font-secondary !important;
+}
+
+.pageNav .nav-tabs>li>.link:hover, .pageNav .nav-tabs>li>a:hover {
+    border-bottom: 3px solid transparent;
+}
+
+//style override from _eventswebpart.scss
+
+.alert.alert-warning p {
+    padding:0;
+
+    a{
+        text-decoration:underline;
+    }
+
+    &:before {
+    display:none;
+}
+
+}
+
+.alert-success{
+    @include alert-custom(white, #00938B);
+}
+
+.alert-warning{
+    @include alert-custom(#212224, #FFC11E);
+}
+
+.alert-info{
+    @include alert-custom(white, #79298C);
+}
+
+.alert-danger{
+    @include alert-custom(white, #E41149);
+}
+
+//alerts
+.alert {
+
+    .close{
+        &:hover{
+            background:transparent; 
+
+            span{
+                background:transparent;
+            }
+        }
+    }
+}
+
+.carousel {
+    margin-bottom: 0;
+}
+
+.col-md-8{
+    .carousel {
+        margin-bottom: 30px;
+    }
+}
+
+//back to top 
+.cd-top {
+    background-color: rgba(0,109,167,.8);
+    color:white !important;
+}
+
+//so yellow border doesn't appear on hover
+.blockLink.button {
+    background:none !important;
+}
+
+//breadcrumb branding
+.breadcrumb ul li {
+    font-family: "Oswald", sans-serif;
+}
+
+.breadcrumb ul li a {
+    color:#006DA5;
+}
+
+.breadcrumb {
+    padding: 0;
+    font-size: 18px;
+
+    @media (max-width: 767px){
+        padding: 0;
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 767px){
+.blockLink a span.info span.secondaryInfo {
+    font-size: .75rem;
+}
+}
+
+@media (min-width: 500px) {
+    ul.date-list li:nth-child(3n+4){
+        clear:left;
+    }
+}
+.dateBox li p {
+    font-size:16px;
+}
+
+.dateBox p span {
+    font-size: 1rem;
+}
+
+.eventDetailsBlockIconVenue:before {
+    display:none;
+}
+
+ul.accordion li ul{ 
+    @extend .list;
+    @extend .list-bullet;
+}
+
+.btn-arrow:before, .btn[rel=external]:before {
+    background: transparent;
+}
+
+#eventsFilter{
+    .form-control{
+        width:100% !important;
+        padding-left: 10px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .carousel {
+        display: block;
+    }
+}
+
+@media (max-width: 767px) {
+    .home-page .carousel {
+        display: none;
+    }
+} 
